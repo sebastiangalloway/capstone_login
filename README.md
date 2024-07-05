@@ -1,5 +1,7 @@
 # CapstoneLogin
 
+# clearing users and logins
+Run localStorage.clear() in the console to remove locally stored user information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server

@@ -1,6 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+
+declare global {
+  var isLoggedIn: boolean;
+}
+
+globalThis.isLoggedIn = false;
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -46,6 +54,7 @@ export class LoginComponent {
       const isUserFound = users.find((m: any) =>m.userName == this.userLogin.userName && m.password == this.userLogin.password);
       if (isUserFound != undefined) {
         alert('Login Successful!');
+        globalThis.isLoggedIn = true;
         this.router.navigateByUrl('dashboard');
       }else {
         alert('User Name or Password is Wrong!');
